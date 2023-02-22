@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>One True Bird Mod</Name>
+    <Guid>01266b92-9c81-4043-9679-e0e5fdfed048</Guid>
+    <ProjectGuid>b1f12c49-5251-4a0a-a480-ee296217b260</ProjectGuid>
+    <ModVersion>1</ModVersion>
+    <Teaser>Removes world congress and era score.</Teaser>
+    <Description>Removes two irksome mechanics: world congress and era score.  World congress begins at the start of the nonexistent age 20, and new era score thresholds guarantee that every civ has a normal age every age.</Description>
+    <Authors>rememberthecant</Authors>
+    <SpecialThanks>our lord and saviour the Living Comfort Eagle</SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AssociationData><![CDATA[<Associations>
+  <Dependency type="Dlc" title="Expansion: Gathering Storm" id="4873eb62-8ccc-4574-b784-dda455e74e68" />
+</Associations>]]></AssociationData>
+    <AssemblyName>OneTrueBirdMod</AssemblyName>
+    <RootNamespace>OneTrueBirdMod</RootNamespace>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="modify_globals"><Properties><LoadOrder>100</LoadOrder></Properties><File>Expansion1_GlobalParameters.xml</File><File>Expansion2_GlobalParameters.xml</File></UpdateDatabase></InGameActions>]]></InGameActionData>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="OneTrueBirdMod.Art.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Expansion1_GlobalParameters.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Expansion2_GlobalParameters.xml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
+</Project>
